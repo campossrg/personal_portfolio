@@ -96,10 +96,18 @@
 			}
 		});
 	});
+
+	// TODO: Include ajax form response control
+	// An alert message simulates the mail sending
+	$("#idSendEmailForm").submit(function(e)
+	{
+        alert("Correo enviado satisfactoriamente!");
+    });
 	  
 })(jQuery); // End of use strict
 
-    function validateForm() {
+    function validateForm()
+    {
     	var email = document.sendEmailForm.from.value;
     	atpos = email.indexOf("@");
         dotpos = email.lastIndexOf(".");

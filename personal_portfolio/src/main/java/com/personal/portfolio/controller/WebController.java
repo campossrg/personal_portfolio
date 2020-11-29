@@ -17,17 +17,17 @@ public class WebController {
     private EmailService emailService;
 	
     @GetMapping("/")
-	public String index(Model model) {
-		
+	public String index(Model model)
+	{
 	    model.addAttribute("mail", new Mail());
 	    		return "index";
 	}
 	
 	@PostMapping("/sendEmail")
-	public String sendMeEmail(@ModelAttribute("email") Mail mail, Model theModel) {
-		
+	public String sendMeEmail(@ModelAttribute("email") Mail mail, Model theModel)
+	{
 		if(emailService.sendSimpleMessage(mail)) {
-			return "index";			
+			return "redirect:/";
 		} else {
 			return "sendEmailResultKO";
 		}

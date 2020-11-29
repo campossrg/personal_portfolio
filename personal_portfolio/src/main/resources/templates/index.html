@@ -278,11 +278,11 @@
 						<div id="small-dialog-sendEmail" class="small-dialog zoom-anim-dialog mfp-hide">
 							<div class="container">
 								<div class="row justify-content-md-center">
-							    	<form action="#" th:action="@{/sendEmail}" th:object="${mail}" method="post" name="sendEmailForm" onsubmit="return validateForm()">
-								    		<p>From: <input type="text" th:field="*{from}" class="form-control" placeholder="example@gmail.com" name="sefFrom" required/></p>
-								        	<p>Name: <input type="text" th:field="*{name}" class="form-control" placeholder="Daniel" name="sefName" required/></p>
-								        	<p>Phone: <input type="text" th:field="*{phone}" class="form-control" placeholder="+34 659190190" name="sefPhone" required/></p>
-								        	<p>Body: </p><textarea th:field="*{content}" rows=6 cols=40 class="form-control" placeholder="Inserta texto aquí..." name="sefBody" required/>
+							    	<form id="idSendEmailForm" th:action="@{/sendEmail}" th:object="${mail}" method="post" name="sendEmailForm" onsubmit="return validateForm()">
+								    		<p>EMail: <input type="text" th:field="*{from}" class="form-control" placeholder="ejemplo@gmail.com" name="sefFrom" required/></p>
+								        	<p>Nombre: <input type="text" th:field="*{name}" class="form-control" placeholder="Daniel" name="sefName" required/></p>
+								        	<p>Teléfono: <input type="text" th:field="*{phone}" class="form-control" placeholder="+34 659190190" name="sefPhone" required/></p>
+								        	<p>Texto: </p><textarea th:field="*{content}" rows=6 cols=40 class="form-control" placeholder="Inserta el cuerpo del mensaje aquí..." name="sefBody" required/>
 								        	<br>
 											<input class="btn btn-primary btn-sm" type="submit" value="Submit" />
 											<input class="btn btn-primary btn-sm" type="reset" value="Reset" />

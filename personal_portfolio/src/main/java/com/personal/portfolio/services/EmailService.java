@@ -25,8 +25,10 @@ public class EmailService {
     private String subject;
     
     public boolean sendSimpleMessage(final Mail mail){
-    	
-    	try {
+
+
+    	try
+        {
     		SimpleMailMessage message = new SimpleMailMessage();
     		
     		mail.setTo(from);
@@ -41,7 +43,8 @@ public class EmailService {
     		
     		return true;
     	}
-    	catch(Exception e) {
+    	catch(Exception e)
+        {
     		logger.error(e.getMessage());
     		return false;
     	}		
