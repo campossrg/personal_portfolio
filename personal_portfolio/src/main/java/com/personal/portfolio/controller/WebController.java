@@ -22,6 +22,13 @@ public class WebController {
 	    model.addAttribute("mail", new Mail());
 	    		return "index";
 	}
+    
+    @GetMapping("/eng")
+	public String indexEng(Model model)
+	{
+	    model.addAttribute("mail", new Mail());
+	    		return "indexEng";
+	}
 	
 	@PostMapping("/sendEmail")
 	public String sendMeEmail(@ModelAttribute("email") Mail mail, Model theModel)

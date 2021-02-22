@@ -106,6 +106,7 @@
 	  
 })(jQuery); // End of use strict
 
+    //Email sender validator
     function validateForm()
     {
     	var email = document.sendEmailForm.from.value;

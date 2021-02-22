@@ -10349,3 +10349,29 @@ header.masthead h1 {
   -ms-transform: translate(-50%, -50%);
 }
 
+/* Typewritter animation */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+.typewritter p {
+  border-right: solid 3px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace;  
+  font-size: 28px;
+  float: right;
+  color: rgba(255,255,255,.70);
+  animation: animated-text 2s steps(40,end) 1s 1 normal both,
+             animated-cursor 600ms steps(17,end) infinite;
+}
+
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 440px;}
+}
+
+/* cursor animations */
+@keyframes animated-cursor{
+  from{border-right-color: rgba(255,255,255,.70);}
+  to{border-right-color: transparent;}
+}
