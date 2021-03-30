@@ -19,6 +19,8 @@ public class EmailService {
     
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
     
+    @Value("${mail.to}")
+    private String to;
     @Value("${mail.from}")
     private String from;
     @Value("${mail.subject}")
@@ -31,13 +33,13 @@ public class EmailService {
         {
     		SimpleMailMessage message = new SimpleMailMessage();
     		
-    		mail.setTo(from);
+    		mail.setTo(to);
     		mail.setSubject(subject);
     		
-    		message.setSubject(mail.getSubject() + " " + mail.getName() + " " + mail.getPhone());
-    		message.setText(mail.getContent());
+    		message.setSubject(mail.getSubject() + " " + mail.getName() + " - " + mail.getFrom());
+    		message.setText(mail.getName() + " from " + mail.getFrom() + " - " + mail.getPhone() + " sent you this text: \n" + mail.getContent());
     		message.setTo(mail.getTo());
-    		message.setFrom(mail.getFrom());
+    		message.setFrom(from);
     		
     		emailSender.send(message);
     		
