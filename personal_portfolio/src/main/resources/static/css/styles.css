@@ -10367,7 +10367,7 @@ header.masthead h1 {
 /* text animation */
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 440px;}
+  to{width: 460px;}
 }
 
 /* cursor animations */
