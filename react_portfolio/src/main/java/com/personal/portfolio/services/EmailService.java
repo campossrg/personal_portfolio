@@ -26,7 +26,7 @@ public class EmailService {
     @Value("${mail.subject}")
     private String subject;
     
-    public boolean sendSimpleMessage(final Mail mail){
+    public String sendSimpleMessage(final Mail mail){
 
 
     	try
@@ -43,12 +43,13 @@ public class EmailService {
     		
     		emailSender.send(message);
     		
-    		return true;
+    		return "ok";
     	}
     	catch(Exception e)
         {
-    		logger.error(e.getMessage());
-    		return false;
+			String error = e.getMessage();
+    		logger.error(error);
+    		return error;
     	}		
     }
 

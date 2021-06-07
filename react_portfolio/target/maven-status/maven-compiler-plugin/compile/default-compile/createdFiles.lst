@@ -1,6 +1,6 @@
-com/personal/portfolio/controller/LoggingController.class
-com/personal/portfolio/MailConfiguration.class
 com/personal/portfolio/services/EmailService.class
 com/personal/portfolio/entity/Mail.class
 com/personal/portfolio/Application.class
+com/personal/portfolio/MailConfiguration.class
+com/personal/portfolio/controller/LoggingController.class
 com/personal/portfolio/controller/WebController.class
