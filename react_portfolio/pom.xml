@@ -111,15 +111,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>appengine-maven-plugin</artifactId>
-				<version>2.4.0</version>
-				<configuration>
-					<deploy.projectId>valid-reflector-316112</deploy.projectId>
-					<deploy.version>valid-reflector-316112</deploy.version>
-				</configuration>
-			</plugin>
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
 	</build>
