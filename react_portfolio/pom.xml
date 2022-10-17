@@ -24,10 +24,6 @@
 
 	<dependencies>
 		<dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-thymeleaf</artifactId>
-	    </dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -78,6 +74,18 @@
 						<!-- optional: default phase is "generate-resources" -->
 						<phase>generate-resources</phase>
 					</execution>
+					<!-- <execution>
+						<id>npm run build</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+					
+						<phase>generate-resources</phase>
+					
+						<configuration>
+							<arguments>run build</arguments>
+						</configuration>
+					</execution> -->
 				</executions>
 				<configuration>
 					<nodeVersion>${node.version}</nodeVersion>
@@ -87,6 +95,7 @@
 					
 					<!-- optional: where to download node and npm from. Defaults to https://nodejs.org/dist/ -->
 					<downloadRoot>http://myproxy.example.org/nodejs/</downloadRoot>
+					<workingDirectory>frontend</workingDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
