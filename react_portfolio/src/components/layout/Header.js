@@ -86,7 +86,8 @@ const Header = ({
             'site-header-inner'
           )}>
           <div className="header-nav-inner list-reset text-sm">
-            <Link onClick={closeMenu, () => {
+            <Link onClick={() => {
+              closeMenu();
               document.querySelector('#Hero').scrollIntoView({ behavior: 'smooth', block: 'start' })
             }}><span className="text-color-secondary">campos.srg</span></Link>
           </div>
@@ -116,12 +117,14 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link onClick={closeMenu, () => {
+                      <Link onClick={() => {
+                        closeMenu();
                         document.querySelector('#Experience').scrollIntoView({ behavior: 'smooth', block: 'start' })
                       }}>Experience</Link>
                     </li>
                     <li>
-                      <Link onClick={closeMenu, () => {
+                      <Link onClick={() => {
+                        closeMenu();
                         document.querySelector('#Techstack').scrollIntoView({ behavior: 'smooth', block: 'start' })
                       }}>Tech Stack</Link>
                     </li>
@@ -131,7 +134,8 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link className="button button-secondary button-wide-mobile button-sm" onClick={closeMenu, (e) => {
+                        <Link className="button button-secondary button-wide-mobile button-sm" onClick={(e) => {
+                          closeMenu();
                           openContact(e);
                         }}>Contact</Link>
                       </li>
