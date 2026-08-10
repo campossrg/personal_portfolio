@@ -128,6 +128,12 @@ const Header = ({
                         document.querySelector('#Techstack').scrollIntoView({ behavior: 'smooth', block: 'start' })
                       }}>Tech Stack</Link>
                     </li>
+                    <li>
+                      <Link onClick={() => {
+                        closeMenu();
+                        document.querySelector('#SideProjects').scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }}>Side Projects</Link>
+                    </li>
                   </ul>
                   {!hideSignin &&
                     <ul

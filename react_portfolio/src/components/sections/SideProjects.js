@@ -51,7 +51,7 @@ const SideProjects = ({
             {...props}
             className={outerClasses}
         >
-            <div className="container-md">
+            <div id="SideProjects" className="container-md">
                 <div className={innerClasses}>
                     <SectionHeader data={sectionHeader} className="center-content" />
 

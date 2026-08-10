@@ -23,8 +23,18 @@ const FooterNav = ({
       <ul className="list-reset">
         <li>
           <Link onClick={() => {
+              document.querySelector('#Experience').scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}>Experience</Link>
+        </li>
+        <li>
+          <Link onClick={() => {
               document.querySelector('#Techstack').scrollIntoView({ behavior: 'smooth', block: 'start' })
             }}>Tech stack</Link>
+        </li>
+        <li>
+          <Link onClick={() => {
+              document.querySelector('#SideProjects').scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}>Side Projects</Link>
         </li>
         <li>
           <Link onClick={openContact}>Contact</Link>
