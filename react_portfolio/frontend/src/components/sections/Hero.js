@@ -4,6 +4,7 @@ import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import classes from './../../assets/scss/core/elements/_backgroundVideo.module.scss';
+import { useContactModal } from '../../utils/ContactModalContext';
 
 const propTypes = {
   ...SectionProps.types
@@ -40,6 +41,7 @@ const Hero = ({
   );
 
   const videoSource = require('./../../assets/images/video/bg_coding.mp4').default
+  const { openContact } = useContactModal();
 
   return (
     <section
@@ -58,14 +60,12 @@ const Hero = ({
             <div className={classes.Content}>
                 <div className={classes.SubContent} >
                     <h1>
-                        <span className="text-color-secondary disable">Software Engineer</span> for architecture & distributed systems
+                        <span className="text-color-secondary disable">Software Engineer</span> Architecture, Distributed Systems & AI
                     </h1>
-                    <p>10+ years building backend solutions and service-oriented architectures across cloud (GCP, AWS) and on-premise (Red Hat OpenShift) environments. Currently exploring how AI agents can reshape software development.</p>
+                    <p>10+ years building backend solutions and service-oriented architectures across cloud (GCP, AWS) and on-premise (Red Hat OpenShift) environments.</p>
                     <div>
                         <ButtonGroup>
-                            <Button tag="a" color="secondary" wideMobile href="#Contact" onClick={() => {
-                              document.querySelector('#Contact').scrollIntoView({ behavior: 'smooth', block: 'center' })
-                            }}>
+                            <Button tag="a" color="secondary" wideMobile href="#" onClick={openContact}>
                                 Contact
                             </Button>
                             <Button tag="a" color="dark" wideMobile href="#Experience" onClick={() => {

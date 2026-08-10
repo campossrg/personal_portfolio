@@ -33,7 +33,7 @@ const Techstack = ({
     );
 
     const innerClasses = classNames(
-        'features-tiles-inner section-inner pt-0',
+        'features-tiles-inner section-inner',
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
@@ -74,7 +74,7 @@ const Techstack = ({
                                         Frontend
                                     </h4>
                                     <p className="m-0 text-sm">
-                                        React 18 / Angular 19 / React Native / CSS3
+                                        React 18 / Angular 19 / CSS3
                                     </p>
                                 </div>
                             </div>

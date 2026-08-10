@@ -1,11 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { useContactModal } from '../../../utils/ContactModalContext';
 
 const FooterNav = ({
   className,
   ...props
 }) => {
+
+  const { openContact } = useContactModal();
 
   const classes = classNames(
     'footer-nav',
@@ -20,23 +23,11 @@ const FooterNav = ({
       <ul className="list-reset">
         <li>
           <Link onClick={() => {
-              document.querySelector('#Services').scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }}>Services</Link>
-        </li>
-        <li>
-          <Link onClick={() => {
-              document.querySelector('#Projects').scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }}>Projects</Link>
-        </li>
-        <li>
-          <Link onClick={() => {
               document.querySelector('#Techstack').scrollIntoView({ behavior: 'smooth', block: 'start' })
             }}>Tech stack</Link>
         </li>
         <li>
-          <Link onClick={() => {
-              document.querySelector('#Contact').scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }}>Contact</Link>
+          <Link onClick={openContact}>Contact</Link>
         </li>
       </ul>
     </nav>

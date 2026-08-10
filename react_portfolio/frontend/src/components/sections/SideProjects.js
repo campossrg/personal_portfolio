@@ -13,7 +13,7 @@ const defaultProps = {
     ...SectionTilesProps.defaults
 }
 
-const Testimonial = ({
+const SideProjects = ({
     className,
     topOuterDivider,
     bottomOuterDivider,
@@ -54,7 +54,36 @@ const Testimonial = ({
             <div className="container-md">
                 <div className={innerClasses}>
                     <SectionHeader data={sectionHeader} className="center-content" />
-                    <div className={tilesClasses}>
+
+                    <div className="container">
+                        <div className="split-wrap">
+                            <div className="split-item">
+                                <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+                                    <div className="text-xxs text-color-secondary fw-600 tt-u mb-8">
+                                        CASTANYA DE VILADRAU
+                                    </div>
+                                    <h3 className="mt-0 mb-12">
+                                        Castanya de Viladrau
+                                    </h3>
+                                    <p className="mb-12">
+                                        Marketing website for a Montseny chestnut-producer brand, built end-to-end from design to deployment, showcasing partner restaurants, products and guided visits.
+                                    </p>
+                                    <Button tag="a" color="dark" wideMobile href="https://castanyadeviladrau.cat/" target="_blank" rel="noreferrer">
+                                        Visit website
+                                    </Button>
+                                </div>
+                                <div className="split-item-image center-content-mobile reveal-from-bottom" data-reveal-container=".split-item">
+                                    <Image
+                                        src={require('./../../assets/images/thumbnails/castanyadeviladrau.jpg').default}
+                                        alt="Castanya de Viladrau"
+                                        width={528}
+                                        height={396} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={tilesClasses} style={{ marginTop: '80px' }}>
 
                         <div className="tiles-item reveal-from-left center-content" data-reveal-delay="600">
                             <Image
@@ -111,7 +140,7 @@ const Testimonial = ({
     );
 }
 
-Testimonial.propTypes = propTypes;
-Testimonial.defaultProps = defaultProps;
+SideProjects.propTypes = propTypes;
+SideProjects.defaultProps = defaultProps;
 
-export default Testimonial;
+export default SideProjects;

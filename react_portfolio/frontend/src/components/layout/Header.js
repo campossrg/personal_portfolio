@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { useContactModal } from '../../utils/ContactModalContext';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -30,6 +31,7 @@ const Header = ({
 }) => {
 
   const [isActive, setIsactive] = useState(false);
+  const { openContact } = useContactModal();
 
   const nav = useRef(null);
   const hamburger = useRef(null);
@@ -120,16 +122,6 @@ const Header = ({
                     </li>
                     <li>
                       <Link onClick={closeMenu, () => {
-                        document.querySelector('#Services').scrollIntoView({ behavior: 'smooth', block: 'start' })
-                      }}>Services</Link>
-                    </li>
-                    <li>
-                      <Link onClick={closeMenu, () => {
-                        document.querySelector('#Projects').scrollIntoView({ behavior: 'smooth', block: 'start' })
-                      }}>Projects</Link>
-                    </li>
-                    <li>
-                      <Link onClick={closeMenu, () => {
                         document.querySelector('#Techstack').scrollIntoView({ behavior: 'smooth', block: 'start' })
                       }}>Tech Stack</Link>
                     </li>
@@ -139,8 +131,8 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link className="button button-secondary button-wide-mobile button-sm" onClick={closeMenu, () => {
-                          document.querySelector('#Contact').scrollIntoView({ behavior: 'smooth', block: 'start' })
+                        <Link className="button button-secondary button-wide-mobile button-sm" onClick={closeMenu, (e) => {
+                          openContact(e);
                         }}>Contact</Link>
                       </li>
                     </ul>}
