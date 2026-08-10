@@ -1,0 +1,46 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'react_portfolio/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+          cache-dependency-path: react_portfolio/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: react_portfolio
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        working-directory: react_portfolio
+        run: pnpm run build
+
+      - name: Deploy to campossrg.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: campossrg/campossrg.github.io
+          publish_branch: main
+          publish_dir: react_portfolio/build
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

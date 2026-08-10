@@ -1,5 +1,0 @@
-allowBuilds:
-  '@parcel/watcher': false
-  core-js: false
-  ejs: false
-  es5-ext: false
